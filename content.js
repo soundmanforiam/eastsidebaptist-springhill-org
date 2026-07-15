@@ -55,6 +55,8 @@ window.SITE_CONTENT = {
   hero: {
     eyebrow: "East Side Baptist Church · Springhill, Louisiana",
     name: "Come as you are.",
+    image: "../assets/img/church-300x169-1.png",
+    imageAlt: "East Side Baptist Church in Springhill Louisiana",
     tagline: "A small congregation on the east side of Springhill, holding to the old paths — Sunday School, worship, and prayer meeting, every week, for everyone who walks through the door.",
     primaryCta: { label: "Watch the latest sermon", href: "#sermons" },
     secondaryCta: { label: "Get directions", href: "#contact" },
