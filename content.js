@@ -76,28 +76,28 @@ window.SITE_CONTENT = {
       date: "April 11, 2021",
       speaker: "Bro. Walter A. Holmes",
       description: "",
-      // video: { type: "vimeo", src: "https://vimeo.com/535623052?fl=pl&fe=cm" },
+      video: { type: "vimeo", src: "535623052" },
     },
 	{
       title: "Easter Morning",
       date: "2021",
       speaker: "Bro. Walter A. Holmes",
       description: "",
-      // video: { type: "vimeo", src: "https://vimeo.com/533289991?fl=pl&fe=cm" },
+      video: { type: "vimeo", src: "533289991" },
     },
     {
       title: "What a Day",
       date: "March 25, 2021",
       speaker: "Bro. Walter A. Holmes",
       description: "",
-      // video: { type: "vimeo", src: "https://vimeo.com/533291798?fl=pl&fe=cm" },
+      video: { type: "vimeo", src: "533291798" },
     },
     {
       title: "Getting Your Hopes Up",
       date: "March 21, 2021",
       speaker: "Bro. Walter A. Holmes",
       description: "",
-      // video: { type: "vimeo", src: "https://vimeo.com/533292734?fl=pl&fe=cm" },
+      video: { type: "vimeo", src: "533292734" },
     },
 
 	{
@@ -105,7 +105,7 @@ window.SITE_CONTENT = {
       date: "March 14, 2021",
       speaker: "Bro. Walter A. Holmes",
       description: "",
-      // video: { type: "vimeo", src: "https://vimeo.com/533294224?fl=pl&fe=cm" },
+      video: { type: "vimeo", src: "533294224" },
     },
 
     {
@@ -113,7 +113,7 @@ window.SITE_CONTENT = {
       date: "March 7, 2021",
       speaker: "Bro. Walter A. Holmes",
       description: "",
-      // video: { type: "vimeo", src: "https://vimeo.com/533295997?fl=pl&fe=cm" },
+      video: { type: "vimeo", src: "533295997" },
     },
 
   ],
