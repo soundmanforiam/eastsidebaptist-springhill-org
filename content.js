@@ -48,6 +48,7 @@ window.SITE_CONTENT = {
   nav: [
     { label: "Home", href: "#top" },
     { label: "Sermons", href: "#sermons" },
+    { label: "Facebook", href: "#facebook" },
     { label: "Pastor", href: "#pastor" },
     { label: "Contact", href: "#contact" },
   ],
@@ -120,6 +121,14 @@ window.SITE_CONTENT = {
 
   ],
 
+  // Live feed of the church's Facebook page — updates automatically
+  // whenever they post, no site edits needed. Change pageUrl if the
+  // page's web address ever changes.
+  facebook: {
+    heading: "Latest from Facebook",
+    pageUrl: "https://www.facebook.com/profile.php?id=61592050793517",
+  },
+
   pastor: {
     name: "Bro. Walter A. Holmes",
     photo: "assets/img/pastor.jpg",
@@ -144,6 +153,8 @@ window.SITE_CONTENT = {
     mailingAddress: "P.O. Box 637, Springhill, LA 71075",
     email: "info@eastsidebaptist-springhill.org",
     mapEmbedSrc: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6692.289351684008!2d-93.450291!3d32.999961!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86315fa52efc965f%3A0x3f571b0734ab5b72!2s813%20Reynolds%20St%2C%20Springhill%2C%20LA%2071075!5e0!3m2!1sen!2sus!4v1597626196128!5m2!1sen!2sus",
+    facebook: "https://www.facebook.com/profile.php?id=61592050793517",
+    facebookLabel: "Message us on Facebook",
     note: "We don't run an online contact form — Facebook Messenger or email is the fastest way to reach us.",
   },
 

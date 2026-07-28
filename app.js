@@ -137,6 +137,28 @@
     grid.appendChild(card);
   });
 
+  // ---- FACEBOOK ----
+  if (C.facebook && C.facebook.pageUrl) {
+    $("#facebook-heading").textContent = C.facebook.heading || "Latest from Facebook";
+    const fbContainer = $("#facebook-embed");
+    fbContainer.appendChild(
+      el("div", {
+        class: "fb-page",
+        "data-href": C.facebook.pageUrl,
+        "data-tabs": "timeline",
+        "data-width": "500",
+        "data-height": "700",
+        "data-small-header": "false",
+        "data-adapt-container-width": "true",
+        "data-hide-cover": "false",
+        "data-show-facepile": "true",
+      })
+    );
+    // If the FB SDK already finished loading before this ran, ask it to
+    // render the plugin we just added (normally it parses on its own).
+    if (window.FB && window.FB.XFBML) window.FB.XFBML.parse(fbContainer);
+  }
+
   // ---- PASTOR ----
   const pastorPhoto = $("#pastor-photo");
   pastorPhoto.src = C.pastor.photo;

@@ -287,7 +287,7 @@ img { max-width: 100%; display: block; }
 /* ============================================================
    SHARED SECTION SPACING
    ============================================================ */
-.sermons, .pastor, .contact {
+.sermons, .pastor, .contact, .facebook {
   max-width: var(--max);
   margin: 0 auto;
   padding: clamp(64px, 9vw, 110px) var(--gutter);
@@ -369,6 +369,24 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 760px) {
   .contact__inner { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FACEBOOK
+   ============================================================ */
+.facebook__embed {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.facebook__embed .fb-page {
+  width: 100%;
+  max-width: 500px;
+}
+.facebook__embed span,
+.facebook__embed iframe {
+  width: 100% !important;
+  max-width: 500px;
 }
 
 /* ============================================================
