@@ -7,8 +7,8 @@ just static files, ready for Cloudflare Pages.
 
 - `index.html` — page structure (you shouldn't need to touch this)
 - `styles.css` — all visual design
-- `content.js` — **edit this one.** Every word of text, every service
-  time, and every sermon on the site lives here.
+- `content.js` — **edit this one.** Every word of text and every
+  service time on the site lives here.
 - `app.js` — reads `content.js` and builds the page (you shouldn't
   need to touch this either)
 - `assets/img/` — photos. `pastor.jpg` in there right now is just a
@@ -21,26 +21,15 @@ Open `content.js` in any text editor (even Notepad or TextEdit works).
 Everything is labeled in plain English. Change a time, save the file,
 re-upload — done.
 
-## Adding a new sermon
+## Sermons
 
-In `content.js`, find the `sermons: [ ... ]` list near the top and
-copy one whole block (from `{` to the matching `},`), paste it at the
-top of the list (newest first), then edit the fields.
+There's no separate sermons section to maintain. The "Latest from
+Facebook" section on the site embeds the church's Facebook page
+directly and updates itself automatically whenever a new sermon (or
+any other post) goes up — nothing to edit here for a new sermon.
 
-### Embedding sermon video (from any CDN)
-
-Four supported formats — pick whichever matches where your video lives:
-
-| Where the video is | What to put in `content.js` |
-|---|---|
-| YouTube | `video: { type: "youtube", src: "VIDEO_ID_OR_FULL_URL" }` |
-| Vimeo | `video: { type: "vimeo", src: "VIDEO_ID_OR_FULL_URL" }` |
-| Cloudflare Stream, Facebook Video, Rumble, or anything else that gives you an embed link | `video: { type: "embed", src: "https://.../iframe" }` |
-| A direct `.mp4` file on any CDN (Cloudflare R2, Bunny, S3, Backblaze, etc.) | `video: { type: "mp4", src: "https://cdn.example.com/file.mp4" }` |
-
-No recording yet? Just leave the whole `video:` line out (or commented
-with `//` in front) — the card will still show the title and
-description without a broken player.
+If the church's Facebook page URL ever changes, update `pageUrl` in
+the `facebook: { ... }` block in `content.js`.
 
 ## Deploying to Cloudflare Pages
 

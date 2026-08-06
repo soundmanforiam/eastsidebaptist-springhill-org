@@ -44,6 +44,11 @@
   );
 
   // ---- HERO ----
+  if (C.hero.image) {
+    const heroBg = $("#hero-bg-image");
+    heroBg.src = C.hero.image;
+    heroBg.alt = C.hero.imageAlt || "";
+  }
   $("#hero-eyebrow").textContent = C.hero.eyebrow;
   $("#hero-name").textContent = C.hero.name;
   $("#hero-tagline").textContent = C.hero.tagline;
@@ -67,75 +72,6 @@
 
   // ---- ANNOUNCEMENT ----
   $("#announcement-text").textContent = C.announcement;
-
-  // ---- SERMONS ----
-  function buildVideo(video) {
-    if (!video || !video.src) return null;
-
-    const wrap = el("div", { class: "sermon__video" });
-
-    if (video.type === "youtube") {
-      const id = extractId(video.src, /(?:youtu\.be\/|v=|embed\/)([\w-]{11})/);
-      wrap.appendChild(
-        el("iframe", {
-          src: `https://www.youtube-nocookie.com/embed/${id}`,
-          title: "Sermon video",
-          loading: "lazy",
-          allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-          allowfullscreen: "true",
-        })
-      );
-    } else if (video.type === "vimeo") {
-      const id = extractId(video.src, /vimeo\.com\/(?:video\/)?(\d+)/);
-      wrap.appendChild(
-        el("iframe", {
-          src: `https://player.vimeo.com/video/${id}`,
-          title: "Sermon video",
-          loading: "lazy",
-          allow: "autoplay; fullscreen; picture-in-picture",
-          allowfullscreen: "true",
-        })
-      );
-    } else if (video.type === "embed") {
-      wrap.appendChild(
-        el("iframe", {
-          src: video.src,
-          title: "Sermon video",
-          loading: "lazy",
-          allow: "autoplay; fullscreen; picture-in-picture; encrypted-media",
-          allowfullscreen: "true",
-        })
-      );
-    } else if (video.type === "mp4") {
-      wrap.appendChild(
-        el("video", { controls: "true", preload: "metadata", src: video.src })
-      );
-    } else {
-      return null;
-    }
-
-    return wrap;
-  }
-
-  function extractId(value, pattern) {
-    const match = String(value).match(pattern);
-    return match ? match[1] : value;
-  }
-
-  const grid = $("#sermons-grid");
-  C.sermons.forEach((sermon, i) => {
-    const videoEl = buildVideo(sermon.video);
-    const card = el("article", { class: `sermon reveal${i === 0 ? " sermon--featured" : ""}` }, [
-      videoEl || el("div", { class: "sermon__video sermon__video--none" }, "Recording coming soon"),
-      el("div", { class: "sermon__body" }, [
-        el("p", { class: "sermon__date" }, sermon.date),
-        el("h3", { class: "sermon__title" }, sermon.title),
-        sermon.speaker ? el("p", { class: "sermon__speaker" }, sermon.speaker) : null,
-        sermon.description ? el("p", { class: "sermon__desc" }, sermon.description) : null,
-      ]),
-    ]);
-    grid.appendChild(card);
-  });
 
   // ---- FACEBOOK ----
   if (C.facebook && C.facebook.pageUrl) {
